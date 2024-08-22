@@ -330,6 +330,9 @@ footer p{
         text-align: center;
     }
 
+     .factimgs img{
+        width: 45px;
+    }
 
     
 }
@@ -482,7 +485,9 @@ footer p{
         text-align: center;
     }
 
-
+     .factimgs img{
+        width: 70px;
+    }
     
 }
     
