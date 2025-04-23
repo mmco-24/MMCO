@@ -849,7 +849,51 @@
       // Change image every 5 seconds
       setInterval(nextImage, 3000);
     });
+
+
+
+    // Get all cards
+    const cards = document.querySelectorAll('.card');
+
+    // Initially hide all cards with opacity 0 and translateY
+    cards.forEach(card => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(50px)';
+      card.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+    });
+
+    // Function to check if element is in viewport
+    function isInViewport(element) {
+      const rect = element.getBoundingClientRect();
+      return (
+        rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.8 &&
+        rect.bottom >= 0
+      );
+    }
+
+    // Function to handle scroll event
+    function handleScroll() {
+      cards.forEach((card, index) => {
+        if (isInViewport(card) && card.style.opacity === '0') {
+          // Add a slight delay for each card to create a cascading effect
+          setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+          }, index * 200); // 200ms delay between each card
+        }
+      });
+    }
+
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScroll);
+
+    // Check initial position in case cards are already in view when page loads
+    handleScroll();
+
+
   </script>
+
+
 </body>
 
 </html>
