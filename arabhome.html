@@ -37,6 +37,155 @@
       /* For fixed header calculation */
       --nav-height: 60px;
       /* For fixed nav calculation */
+
+
+
+      /* Dark mode variables */
+      --dark-primary-color: #062134;
+      --dark-secondary-color: #1a5985;
+      --dark-accent-color: #e67e00;
+      --dark-text-color: #f0f0f0;
+      --dark-bg: #121212;
+      --dark-card-bg: #1e1e1e;
+      --dark-card-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Dark Mode Header and Footer Overrides */
+    body.dark-mode header {
+      background-color: var(--dark-primary-color);
+    }
+
+    body.dark-mode footer {
+      background-color: var(--dark-primary-color);
+    }
+
+    body.dark-mode .footer-contact i,
+    body.dark-mode .contact-info i {
+      color: var(--dark-accent-color);
+    }
+
+    body.dark-mode .social-links a:hover {
+      color: var(--dark-accent-color);
+    }
+
+    body.dark-mode .back-to-top {
+      background-color: var(--dark-primary-color);
+    }
+
+    body.dark-mode .back-to-top:hover {
+      background-color: var(--dark-accent-color);
+    }
+
+    /* Make sure copyright text is visible in dark mode */
+    body.dark-mode .copyright {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* Dark Mode Toggle */
+    .dark-mode-toggle {
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
+
+    #darkModeToggle {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.2rem;
+      color: var(--primary-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.25rem;
+      border-radius: 50%;
+      width: 35px;
+      height: 35px;
+      transition: all 0.3s ease;
+      background: rgba(0, 0, 0, 0.05);
+    }
+
+    #darkModeToggle:hover {
+      background: rgba(0, 0, 0, 0.1);
+      transform: rotate(15deg);
+    }
+
+    body.dark-mode #darkModeToggle {
+      color: var(--dark-accent-color);
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    #darkModeToggle .fa-sun {
+      display: none;
+    }
+
+    #darkModeToggle .fa-moon {
+      display: block;
+    }
+
+    body.dark-mode #darkModeToggle .fa-sun {
+      display: block;
+    }
+
+    body.dark-mode #darkModeToggle .fa-moon {
+      display: none;
+    }
+
+
+
+    /* Dark Mode Styles */
+    body.dark-mode .card {
+      background-color: var(--dark-card-bg);
+      box-shadow: var(--dark-card-shadow);
+    }
+
+    body.dark-mode .card-title {
+      color: var(--dark-accent-color);
+    }
+
+    body.dark-mode .card-text {
+      color: #aaa;
+    }
+
+    body.dark-mode .main-nav {
+      background-color: var(--dark-card-bg);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    body.dark-mode .nav-links a {
+      color: var(--dark-text-color);
+    }
+
+    body.dark-mode .nav-links a:hover {
+      color: var(--dark-accent-color);
+    }
+
+    body.dark-mode .language-option a {
+      color: var(--dark-text-color);
+    }
+
+    /* Smooth transition for all elements when switching modes */
+    body,
+    header,
+    .main-nav,
+    .card,
+    .card-title,
+    .card-text,
+    .nav-links a,
+    .card-btn,
+    .language-option a,
+    .back-to-top,
+    .footer-contact p,
+    .footer-contact a,
+    .social-links a,
+    .slider-text,
+    .card-img img {
+      transition: all 0.3s ease;
+    }
+
+    /* Dark mode class that will be toggled with JavaScript */
+    body.dark-mode {
+      color: var(--dark-text-color);
+      background-color: var(--dark-bg);
     }
 
     body {
@@ -702,6 +851,12 @@
               <span>العربية</span>
             </a>
           </div>
+          <div class="dark-mode-toggle">
+            <button id="darkModeToggle" aria-label="Toggle Dark Mode">
+              <i class="fas fa-moon"></i>
+              <i class="fas fa-sun"></i>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -890,6 +1045,28 @@
     // Check initial position in case cards are already in view when page loads
     handleScroll();
 
+    // Dark Mode Toggle Functionality
+    document.addEventListener('DOMContentLoaded', function () {
+      const darkModeToggle = document.getElementById('darkModeToggle');
+
+      // Check for saved preference
+      if (localStorage.getItem('darkMode') === 'enabled') {
+        document.body.classList.add('dark-mode');
+      }
+
+      // Toggle dark mode
+      darkModeToggle.addEventListener('click', function () {
+        if (document.body.classList.contains('dark-mode')) {
+          // Switch to light mode
+          document.body.classList.remove('dark-mode');
+          localStorage.setItem('darkMode', 'disabled');
+        } else {
+          // Switch to dark mode
+          document.body.classList.add('dark-mode');
+          localStorage.setItem('darkMode', 'enabled');
+        }
+      });
+    });
 
   </script>
 </body>
