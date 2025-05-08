@@ -701,14 +701,30 @@
     }
 
     @media (max-width: 768px) {
+
+      :root {
+        --header-height: 120px;
+        --nav-height: auto;
+        /* Change from fixed height to auto */
+      }
+
+      .main-nav {
+        padding: 0.75rem 0;
+        height: auto;
+      }
+
       .nav-container {
         flex-direction: column;
+        padding: 0.5rem 0;
+        height: auto;
+
       }
 
       .nav-links {
-        margin-bottom: 1rem;
+        margin-bottom: 0.75rem;
         justify-content: center;
         flex-wrap: wrap;
+        width: 100%;
       }
 
       .nav-links li {
@@ -727,7 +743,7 @@
       }
 
       .image-slider {
-        height: 450px;
+        height: 400px;
       }
 
       .footer-logo {
@@ -735,18 +751,15 @@
       }
 
 
-      :root {
-        --header-height: 150px;
-        --nav-height: 120px;
-      }
+
 
       body {
-        padding-top: calc(var(--header-height) + var(--nav-height));
+        padding-top: 265px;
+        /* Fixed value that gives enough space */
       }
     }
 
     @media (max-width: 576px) {
-
       .card-grid {
         display: grid;
         width: 85%;
@@ -768,12 +781,14 @@
         color: white;
       }
 
+
+
       .logo-container h1 {
         font-size: 1.2rem;
       }
 
       .language-option {
-        margin-right: 0.5rem;
+        margin-left: 0.5rem;
       }
 
       .image-slider {
@@ -803,7 +818,7 @@
       }
 
       body {
-        padding-top: calc(var(--header-height) + var(--nav-height));
+        padding-top: 290px;
       }
     }
   </style>
