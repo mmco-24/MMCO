@@ -205,7 +205,7 @@
     .social-links a,
     .slider-text,
     .card-img img {
-      transition: all 2s ease-in-out;
+      transition: all 0.5s ease-in-out;
     }
 
     /* Dark mode class that will be toggled with JavaScript */
@@ -218,16 +218,19 @@
     body.dark-mode .hero-section,
     body.dark-mode .cta-section,
     body.dark-mode .clients-card,
+    body.dark-mode .trust-card,
     body.dark-mode .card,
     body.dark-mode .ceo-content,
     body.dark-mode .values-card,
     body.dark-mode .clients-card,
+    body.dark-mode .trust-card,
     body.dark-mode .vision-card {
       background-color: var(--dark-card-bg);
     }
 
     body.dark-mode .values-title,
     body.dark-mode .clients-title,
+    body.dark-mode .trust-title,
     body.dark-mode .ceo-name,
     body.dark-mode .ceo-title,
     body.dark-mode .value-content h4,
@@ -850,8 +853,15 @@
       color: #666;
     }
 
-    /* Clients Card */
+    /* Clients Card - Trust Card*/
     .clients-card {
+      grid-column: span 12;
+      padding: 2.5rem;
+      background: white;
+      text-align: center;
+    }
+   
+    .trust-card {
       grid-column: span 12;
       padding: 2.5rem;
       background: white;
@@ -859,6 +869,15 @@
     }
 
     .clients-title {
+      font-size: 1.8rem;
+      color: var(--primary-color);
+      margin-bottom: 2rem;
+      position: relative;
+      padding-bottom: 0.5rem;
+      display: inline-block;
+    }
+
+    .trust-title {
       font-size: 1.8rem;
       color: var(--primary-color);
       margin-bottom: 2rem;
@@ -878,6 +897,17 @@
       background-color: var(--accent-color);
     }
 
+    .trust-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background-color: var(--accent-color);
+    }
+
     .clients-list {
       display: flex;
       justify-content: center;
@@ -885,7 +915,28 @@
       gap: 2rem;
     }
 
+    .trust-list {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
     .client-item {
+      width: 100px;
+      height: 100px;
+      /* background-color: rgba(0, 0, 0, 0.2); */
+      border-radius: 10px;
+      /* padding: 1px; */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease;
+      /* box-shadow: 0 2px 5px rgba(0, 0, 0.1, 0.1); */
+      box-shadow: 0 2px 5px rgba(0.3, 0.3, 0.3, 0.3);
+    }
+
+    .trust-item {
       width: 120px;
       height: 120px;
       background-color: #f5f5f5;
@@ -901,9 +952,19 @@
       transform: scale(1.05);
     }
 
+    .trust-item:hover {
+      transform: scale(1.05);
+    }
+
     .client-item img {
-      max-width: 85%;
-      max-height: 85%;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .trust-item img {
+      max-width: 95%;
+      max-height: 95%;
       object-fit: contain;
     }
 
@@ -1468,6 +1529,39 @@
         </div>
       </div>
     </section>
+    
+    <!-- Trust Card -->
+    <section class="about-section">
+      <div class="container">
+        <div class="card trust-card" style="border-radius: 30px;">
+          <h3 class="trust-title"><i class="fa-regular fa-circle-check"></i> Trust us with your needs; we'll deliver
+            our best!</h3>
+          <div class="trust-list">
+            <div class="trust-item">
+              <img src="fac1.jpg" alt="" style="border-radius: 15px;">
+            </div>
+            <div class="trust-item">
+              <img src="fac2.jpg" alt="" style="border-radius: 15px;">
+            </div>
+            <div class="trust-item">
+              <img src="fac6.png" alt="" style="border-radius: 15px;">
+            </div>
+            <div class="trust-item">
+              <img src="fac4.jpg" alt="" style="border-radius: 15px;">
+            </div>
+            <div class="trust-item">
+              <img src="fac3.jpg" alt="" style="border-radius: 15px;">
+            </div>
+            <div class="trust-item">
+              <img src="fac5.jpg" alt="" style="border-radius: 15px;">
+            </div>
+            <div class="trust-item">
+              <img src="fac7.jpg" alt="" style="border-radius: 15px;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Call to Action Section -->
     <section class="cta-section">
@@ -1485,29 +1579,31 @@
     <section class="about-section">
       <div class="container">
         <div class="card clients-card" style="border-radius: 30px;">
-          <h3 class="clients-title"><i class="fa-regular fa-circle-check"></i> Trust us with your needs; we'll deliver
-            our best!</h3>
+          <h3 class="clients-title"><i class="fa-regular fa-handshake"></i> Susccess Partners</h3>
           <div class="clients-list">
             <div class="client-item">
-              <img src="fac1.jpg" alt="" style="border-radius: 15px;">
+              <img src="client1.png" alt="" style="border-radius: 5px;">
             </div>
             <div class="client-item">
-              <img src="fac2.jpg" alt="" style="border-radius: 15px;">
+              <img src="client2.png" alt="" style="border-radius: 5px;">
             </div>
             <div class="client-item">
-              <img src="fac6.png" alt="" style="border-radius: 15px;">
+              <img src="client3.png" alt="" style="border-radius: 5px;">
             </div>
             <div class="client-item">
-              <img src="fac4.jpg" alt="" style="border-radius: 15px;">
+              <img src="client4.png" alt="" style="border-radius: 5px;">
             </div>
             <div class="client-item">
-              <img src="fac3.jpg" alt="" style="border-radius: 15px;">
+              <img src="client5.png" alt="" style="border-radius: 5px;">
             </div>
             <div class="client-item">
-              <img src="fac5.jpg" alt="" style="border-radius: 15px;">
+              <img src="client6.png" alt="" style="border-radius: 5px;">
             </div>
             <div class="client-item">
-              <img src="fac7.jpg" alt="" style="border-radius: 15px;">
+              <img src="client7.png" alt="" style="border-radius: 5px;">
+            </div>
+            <div class="client-item">
+              <img src="client8.png" alt="" style="border-radius: 5px;">
             </div>
           </div>
         </div>
@@ -1604,6 +1700,10 @@
       const clientsCard = document.querySelector('.clients-card');
       const clientItems = document.querySelectorAll('.client-item');
 
+      // Get the clients card separately
+      const trustCard = document.querySelector('.trust-card');
+      const trustItems = document.querySelectorAll('.trust-item');
+
       // Initially hide all cards and client items with opacity 0 and translateY
       cards.forEach(card => {
         card.style.opacity = '0';
@@ -1617,7 +1717,19 @@
         clientsCard.style.transition = 'opacity 0.7s ease-out, transform 0.7s ease-out';
       }
 
+      if (trustCard) {
+        trustCard.style.opacity = '0';
+        trustCard.style.transform = 'translateY(50px)';
+        trustCard.style.transition = 'opacity 0.7s ease-out, transform 0.7s ease-out';
+      }
+
       clientItems.forEach(item => {
+        item.style.opacity = '0';
+        item.style.transform = 'scale(0.8)';
+        item.style.transition = 'opacity 0.5s ease-out, transform 0.5s ease-out';
+      });
+
+      trustItems.forEach(item => {
         item.style.opacity = '0';
         item.style.transform = 'scale(0.8)';
         item.style.transition = 'opacity 0.5s ease-out, transform 0.5s ease-out';
@@ -1653,6 +1765,23 @@
           // Animate client items after the clients card appears
           setTimeout(() => {
             clientItems.forEach((item, index) => {
+              setTimeout(() => {
+                item.style.opacity = '1';
+                item.style.transform = 'scale(1)';
+              }, index * 100); // 100ms delay between each client item
+            });
+          }, 300); // Wait 300ms after the client card appears
+        }
+      
+
+        // Animate trust card
+        if (trustCard && isInViewport(trustCard) && trustCard.style.opacity === '0') {
+          trustCard.style.opacity = '1';
+          trustCard.style.transform = 'translateY(0)';
+
+          // Animate client items after the clients card appears
+          setTimeout(() => {
+            trustItems.forEach((item, index) => {
               setTimeout(() => {
                 item.style.opacity = '1';
                 item.style.transform = 'scale(1)';
