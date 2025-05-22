@@ -8,6 +8,8 @@
   <meta name="description"
     content="شركة الفلزات الحديثة للتجارة - متخصصون في تعديل الستانلس ستيل في الرياض، المملكة العربية السعودية">
   <title>شركة الفلزات الحديثة للتجارة</title>
+  <link rel="icon" type="image/x-icon" href="circleMainLogo.png">
+
   <script>
     // Dark Mode Toggle Functionality
     document.addEventListener('DOMContentLoaded', function () {
@@ -216,16 +218,19 @@
     body.dark-mode .hero-section,
     body.dark-mode .cta-section,
     body.dark-mode .clients-card,
+    body.dark-mode .trust-card,
     body.dark-mode .card,
     body.dark-mode .ceo-content,
     body.dark-mode .values-card,
     body.dark-mode .clients-card,
+    body.dark-mode .trust-card,
     body.dark-mode .vision-card {
       background-color: var(--dark-card-bg);
     }
 
     body.dark-mode .values-title,
     body.dark-mode .clients-title,
+    body.dark-mode .trust-title,
     body.dark-mode .ceo-name,
     body.dark-mode .ceo-title,
     body.dark-mode .value-content h4,
@@ -247,7 +252,7 @@
       background: var(--dark-primary-color) !important;
     }
 
-        body.dark-mode .hero-section {
+    body.dark-mode .hero-section {
       background-image: url('aboutUsNight.png');
       background-size: cover;
       background-position: center;
@@ -440,7 +445,7 @@
     }
 
     /* Hero Section Styles */
-   .hero-section {
+    .hero-section {
       position: relative;
       color: white;
       text-align: center;
@@ -847,14 +852,14 @@
       color: #666;
     }
 
-     /* Clients Card - Trust Card*/
+    /* Clients Card - Trust Card*/
     .clients-card {
       grid-column: span 12;
       padding: 2.5rem;
       background: white;
       text-align: center;
     }
-   
+
     .trust-card {
       grid-column: span 12;
       padding: 2.5rem;
@@ -1154,6 +1159,32 @@
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
     }
 
+    .zoom-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .zoom-modal img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+      transition: transform 0.3s ease;
+      transform: scale(1);
+    }
+
+    .zoom-modal.show img {
+      transform: scale(1.05);
+    }
+
     /* Responsive Design */
     @media (max-width: 992px) {
       .cards-grid {
@@ -1247,7 +1278,7 @@
         justify-content: center;
       }
 
-       .hero-section{
+      .hero-section {
         background-size: contain;
         padding: 7rem 0;
       }
@@ -1302,7 +1333,7 @@
         margin: 0.5rem;
       }
 
-       .hero-section{
+      .hero-section {
         background-size: contain;
         padding: 5rem 0;
       }
@@ -1530,31 +1561,36 @@
           </h3>
           <div class="trust-list">
             <div class="trust-item">
-              <img src="fac1.jpg" alt="" style="border-radius: 15px;">
+              <img src="fac1.jpg" alt="" class="zoomable" style="border-radius: 15px;">
             </div>
             <div class="trust-item">
-              <img src="fac2.jpg" alt="" style="border-radius: 15px;">
+              <img src="fac2.jpg" alt="" class="zoomable" style="border-radius: 15px;">
             </div>
             <div class="trust-item">
-              <img src="fac6.png" alt="" style="border-radius: 15px;">
+              <img src="fac6.png" alt="" class="zoomable" style="border-radius: 15px;">
             </div>
             <div class="trust-item">
-              <img src="fac4.jpg" alt="" style="border-radius: 15px;">
+              <img src="fac4.jpg" alt="" class="zoomable" style="border-radius: 15px;">
             </div>
             <div class="trust-item">
-              <img src="fac3.jpg" alt="" style="border-radius: 15px;">
+              <img src="fac3.jpg" alt="" class="zoomable" style="border-radius: 15px;">
             </div>
             <div class="trust-item">
-              <img src="fac5.jpg" alt="" style="border-radius: 15px;">
+              <img src="fac5.jpg" alt="" class="zoomable" style="border-radius: 15px;">
             </div>
             <div class="trust-item">
-              <img src="fac7.jpg" alt="" style="border-radius: 15px;">
+              <img src="fac7.jpg" alt="" class="zoomable" style="border-radius: 15px;">
             </div>
           </div>
         </div>
       </div>
     </section>
-    
+
+    <!-- Zoom Modal (placed outside section) -->
+    <div id="zoomModal" class="zoom-modal">
+      <img id="zoomedImg" src="" alt="">
+    </div>
+
     <!-- Call to Action Section -->
     <section class="cta-section">
       <div class="container">
@@ -1562,7 +1598,8 @@
           <h2 class="cta-title">هل أنت مستعد لبدء مشروعك؟</h2>
           <p class="cta-text">اتصل بنا اليوم لمناقشة كيف يمكننا تحويل رؤيتك إلى واقع من خلال حلول الستانلس ستيل
             المتميزة.</p>
-          <a href="#footer" class="cta-btn"><i class="fa-solid fa-comments"></i> تواصل معنا</a>
+          <a href="https://wa.me/966567438493" class="cta-btn"><i class="fa-solid fa-comments"></i> تواصل معنا</a>
+          <img src="map.png" alt="" style="margin-top: 10px;">
         </div>
       </div>
     </section>
@@ -1660,7 +1697,7 @@
 
 
   <!-- JavaScript for Back to Top Button -->
-   <script>
+  <script>
     // Back to Top Button - Your original script
     window.addEventListener('scroll', function () {
       var backToTopButton = document.getElementById('backToTop');
@@ -1760,7 +1797,7 @@
             });
           }, 300); // Wait 300ms after the client card appears
         }
-      
+
 
         // Animate trust card
         if (trustCard && isInViewport(trustCard) && trustCard.style.opacity === '0') {
@@ -1832,42 +1869,29 @@
         document.head.appendChild(style);
       }
 
-      // Add a fade-in effect for the hero section
-      // const heroSection = document.querySelector('.hero-section');
-      // if (heroSection) {
-      //   heroSection.style.opacity = '0';
-      //   heroSection.style.transition = 'opacity 1s ease-out';
 
-      //   // Make hero section visible after a short delay
-      //   setTimeout(() => {
-      //     heroSection.style.opacity = '1';
-      //   }, 300);
-      // }
     });
 
 
-    // Dark Mode Toggle Functionality
-    // document.addEventListener('DOMContentLoaded', function () {
-    //   const darkModeToggle = document.getElementById('darkModeToggle');
+    const zoomables = document.querySelectorAll('.zoomable');
+    const zoomModal = document.getElementById('zoomModal');
+    const zoomedImg = document.getElementById('zoomedImg');
 
-    //   // Check for saved preference
-    //   if (localStorage.getItem('darkMode') === 'enabled') {
-    //     document.body.classList.add('dark-mode');
-    //   }
+    zoomables.forEach(img => {
+      img.addEventListener('click', () => {
+        zoomedImg.src = img.src;
+        zoomModal.style.display = 'flex';
+        setTimeout(() => zoomModal.classList.add('show'), 10); // For animation
+      });
+    });
 
-    //   // Toggle dark mode
-    //   darkModeToggle.addEventListener('click', function () {
-    //     if (document.body.classList.contains('dark-mode')) {
-    //       // Switch to light mode
-    //       document.body.classList.remove('dark-mode');
-    //       localStorage.setItem('darkMode', 'disabled');
-    //     } else {
-    //       // Switch to dark mode
-    //       document.body.classList.add('dark-mode');
-    //       localStorage.setItem('darkMode', 'enabled');
-    //     }
-    //   });
-    // });
+    zoomModal.addEventListener('click', () => {
+      zoomModal.classList.remove('show');
+      setTimeout(() => {
+        zoomModal.style.display = 'none';
+        zoomedImg.src = '';
+      }, 200);
+    });
   </script>
 
 
