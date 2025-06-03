@@ -1452,7 +1452,7 @@
           <!-- CEO Card -->
           <div class="card ceo-card">
             <div class="ceo-img-container">
-              <img src="OmarArman.jpg" alt="عمر عرمان - الرئيس التنفيذي" class="ceo-img">
+              <img src="OmarArman.jpg" alt="عمر عرمان - الرئيس التنفيذي" class="zoomable" class="ceo-img">
             </div>
             <div class="ceo-content">
               <h3 class="ceo-name"><i class="fa-solid fa-user-tie"></i> م. عمر عرمان</h3>
@@ -1469,7 +1469,7 @@
           <!-- Company History Card -->
           <div class="card history-card">
             <div class="history-img">
-              <img src="journey2.png" alt="تاريخ الشركة" style="object-fit: fill;">
+              <img src="journey2.png" alt="تاريخ الشركة" class="zoomable" style="object-fit: fill;">
             </div>
             <div class="history-content">
               <h3><i class="fa-solid fa-plane-departure"></i> رحلتنا</h3>
@@ -1546,7 +1546,36 @@
                   <p>نعطي الأولوية لفهم وتلبية الاحتياجات الفريدة لكل عميل.</p>
                 </div>
               </div>
+              <div class="value-item">
+                <div class="value-icon">
+                  <i class="fas fa-hands-helping"></i>
+                </div>
+                <div class="value-content">
+                  <h4>التعاون</h4>
+                  <p>نؤمن بقوة العمل الجماعي والشراكات لتحقيق النجاح المشترك.</p>
+                </div>
+              </div>
+
+              <div class="value-item">
+                <div class="value-icon">
+                  <i class="fa-solid fa-chart-simple"></i>
+                </div>
+                <div class="value-content">
+                  <h4>الاستدامة</h4>
+                  <p>نلتزم بالممارسات البيئية المسؤولة التي تعود بالنفع على الأجيال القادمة.</p>
+                </div>
+              </div>
+
             </div>
+          </div>
+
+          <!-- Map Card -->
+          <div class="card values-card">
+            <h3 class="values-title"><i class="fa-solid fa-location-dot"></i> موقعنا</h3>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3626.894074244623!2d46.770149956478896!3d24.627335478636756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f07e010c736c3%3A0x372b3b129f061408!2z2LTYsdmD2Kkg2KfZhNmB2YTYstin2Kog2KfZhNit2K_Zitir2Ycg2YTZhNiq2KzYp9ix2Yc!5e0!3m2!1sen!2ssa!4v1748347855740!5m2!1sen!2ssa"
+              width="100%" height="450" style="border:0; border-radius: 2%;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
 
         </div>
@@ -1599,7 +1628,7 @@
           <p class="cta-text">اتصل بنا اليوم لمناقشة كيف يمكننا تحويل رؤيتك إلى واقع من خلال حلول الستانلس ستيل
             المتميزة.</p>
           <a href="https://wa.me/966567438493" class="cta-btn"><i class="fa-solid fa-comments"></i> تواصل معنا</a>
-          <img src="map.png" alt="" style="margin-top: 10px;">
+          <img src="map.png" alt="" class="zoomable" style="margin-top: 10px;">
         </div>
       </div>
     </section>
@@ -1611,28 +1640,28 @@
           <h3 class="clients-title"><i class="fa-regular fa-handshake"></i> شركاء النجاح</h3>
           <div class="clients-list">
             <div class="client-item">
-              <img src="client1.png" alt="" style="border-radius: 5px;">
+              <img src="client1.png" alt="" class="zoomable" style="border-radius: 5px;">
             </div>
             <div class="client-item">
-              <img src="client2.png" alt="" style="border-radius: 5px;">
+              <img src="client2.png" alt="" class="zoomable" style="border-radius: 5px;">
             </div>
             <div class="client-item">
-              <img src="client3.png" alt="" style="border-radius: 5px;">
+              <img src="client3.png" alt="" class="zoomable" style="border-radius: 5px;">
             </div>
             <div class="client-item">
-              <img src="client4.png" alt="" style="border-radius: 5px;">
+              <img src="client4.png" alt="" class="zoomable" style="border-radius: 5px;">
             </div>
             <div class="client-item">
-              <img src="client5.png" alt="" style="border-radius: 5px;">
+              <img src="client5.png" alt="" class="zoomable" style="border-radius: 5px;">
             </div>
             <div class="client-item">
-              <img src="client6.png" alt="" style="border-radius: 5px;">
+              <img src="client6.png" alt="" class="zoomable" style="border-radius: 5px;">
             </div>
             <div class="client-item">
-              <img src="client7.png" alt="" style="border-radius: 5px;">
+              <img src="client7.png" alt="" class="zoomable" style="border-radius: 5px;">
             </div>
             <div class="client-item">
-              <img src="client8.png" alt="" style="border-radius: 5px;">
+              <img src="client8.png" alt="" class="zoomable" style="border-radius: 5px;">
             </div>
           </div>
         </div>
@@ -1733,19 +1762,19 @@
       cards.forEach(card => {
         card.style.opacity = '0';
         card.style.transform = 'translateY(50px)';
-        card.style.transition = 'opacity 0.7s ease-out, transform 0.7s ease-out';
+        card.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
       });
 
       if (clientsCard) {
         clientsCard.style.opacity = '0';
         clientsCard.style.transform = 'translateY(50px)';
-        clientsCard.style.transition = 'opacity 0.7s ease-out, transform 0.7s ease-out';
+        clientsCard.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
       }
 
       if (trustCard) {
         trustCard.style.opacity = '0';
         trustCard.style.transform = 'translateY(50px)';
-        trustCard.style.transition = 'opacity 0.7s ease-out, transform 0.7s ease-out';
+        trustCard.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
       }
 
       clientItems.forEach(item => {
@@ -1891,6 +1920,56 @@
         zoomModal.style.display = 'none';
         zoomedImg.src = '';
       }, 200);
+    });
+
+    // Auto-hide headers on scroll functionality
+    document.addEventListener('DOMContentLoaded', function () {
+      const header = document.querySelector('header');
+      const mainNav = document.querySelector('.main-nav');
+      let lastScrollTop = 0;
+      let scrollThreshold = 10; // Minimum scroll distance to trigger hide/show
+
+      function handleScroll() {
+        let currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        // Prevent negative scrolling (bounce effect on mobile)
+        if (currentScrollTop < 0) {
+          return;
+        }
+
+        // Check if user scrolled enough to trigger the effect
+        if (Math.abs(lastScrollTop - currentScrollTop) <= scrollThreshold) {
+          return;
+        }
+
+        if (currentScrollTop > lastScrollTop && currentScrollTop > 100) {
+          // Scrolling down & past initial scroll point - hide headers
+          header.style.transform = 'translateY(-100%)';
+          mainNav.style.transform = 'translateY(-210%)'; // Move further up to account for header space
+        } else {
+          // Scrolling up - show headers
+          header.style.transform = 'translateY(0)';
+          mainNav.style.transform = 'translateY(0)';
+        }
+
+        lastScrollTop = currentScrollTop;
+      }
+
+      // Add smooth transition to headers
+      header.style.transition = 'transform 0.3s ease-in-out';
+      mainNav.style.transition = 'transform 0.3s ease-in-out';
+
+      // Throttle scroll events for better performance
+      let scrollTimeout;
+      window.addEventListener('scroll', function () {
+        if (scrollTimeout) {
+          clearTimeout(scrollTimeout);
+        }
+        scrollTimeout = setTimeout(handleScroll, 10);
+      });
+
+      // Also handle on initial load
+      handleScroll();
     });
   </script>
 
