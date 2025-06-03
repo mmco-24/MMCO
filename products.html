@@ -2476,6 +2476,56 @@
       }
     });
   });
+
+  // Auto-hide headers on scroll functionality
+    document.addEventListener('DOMContentLoaded', function () {
+      const header = document.querySelector('header');
+      const mainNav = document.querySelector('.main-nav');
+      let lastScrollTop = 0;
+      let scrollThreshold = 10; // Minimum scroll distance to trigger hide/show
+
+      function handleScroll() {
+        let currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        // Prevent negative scrolling (bounce effect on mobile)
+        if (currentScrollTop < 0) {
+          return;
+        }
+
+        // Check if user scrolled enough to trigger the effect
+        if (Math.abs(lastScrollTop - currentScrollTop) <= scrollThreshold) {
+          return;
+        }
+
+        if (currentScrollTop > lastScrollTop && currentScrollTop > 100) {
+          // Scrolling down & past initial scroll point - hide headers
+          header.style.transform = 'translateY(-100%)';
+          mainNav.style.transform = 'translateY(-210%)'; // Move further up to account for header space
+        } else {
+          // Scrolling up - show headers
+          header.style.transform = 'translateY(0)';
+          mainNav.style.transform = 'translateY(0)';
+        }
+
+        lastScrollTop = currentScrollTop;
+      }
+
+      // Add smooth transition to headers
+      header.style.transition = 'transform 0.3s ease-in-out';
+      mainNav.style.transition = 'transform 0.3s ease-in-out';
+
+      // Throttle scroll events for better performance
+      let scrollTimeout;
+      window.addEventListener('scroll', function () {
+        if (scrollTimeout) {
+          clearTimeout(scrollTimeout);
+        }
+        scrollTimeout = setTimeout(handleScroll, 10);
+      });
+
+      // Also handle on initial load
+      handleScroll();
+    });
 </script>
 
 </html>
