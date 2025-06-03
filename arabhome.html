@@ -8,7 +8,7 @@
   <meta name="description"
     content="شركة الفلزات الحديثة للتجارة - متخصصون في تعديل الستانلس ستيل في الرياض، المملكة العربية السعودية">
   <title>شركة الفلزات الحديثة للتجارة</title>
-    <link rel="icon" type="image/x-icon" href="circleMainLogo.png">
+  <link rel="icon" type="image/x-icon" href="circleMainLogo.png">
 
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -730,11 +730,11 @@
         width: 100%;
       }
 
-       .slider-text h2{
+      .slider-text h2 {
         font-size: 100%;
       }
 
-      .slider-text p{
+      .slider-text p {
         font-size: 70%;
       }
 
@@ -806,11 +806,11 @@
         height: 250px;
       }
 
-       .slider-text h2{
+      .slider-text h2 {
         font-size: 100%;
       }
 
-      .slider-text p{
+      .slider-text p {
         font-size: 70%;
       }
 
@@ -1094,6 +1094,56 @@
       });
     });
 
+
+    // Auto-hide headers on scroll functionality
+    document.addEventListener('DOMContentLoaded', function () {
+      const header = document.querySelector('header');
+      const mainNav = document.querySelector('.main-nav');
+      let lastScrollTop = 0;
+      let scrollThreshold = 10; // Minimum scroll distance to trigger hide/show
+
+      function handleScroll() {
+        let currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        // Prevent negative scrolling (bounce effect on mobile)
+        if (currentScrollTop < 0) {
+          return;
+        }
+
+        // Check if user scrolled enough to trigger the effect
+        if (Math.abs(lastScrollTop - currentScrollTop) <= scrollThreshold) {
+          return;
+        }
+
+        if (currentScrollTop > lastScrollTop && currentScrollTop > 100) {
+          // Scrolling down & past initial scroll point - hide headers
+          header.style.transform = 'translateY(-100%)';
+          mainNav.style.transform = 'translateY(-210%)'; // Move further up to account for header space
+        } else {
+          // Scrolling up - show headers
+          header.style.transform = 'translateY(0)';
+          mainNav.style.transform = 'translateY(0)';
+        }
+
+        lastScrollTop = currentScrollTop;
+      }
+
+      // Add smooth transition to headers
+      header.style.transition = 'transform 0.3s ease-in-out';
+      mainNav.style.transition = 'transform 0.3s ease-in-out';
+
+      // Throttle scroll events for better performance
+      let scrollTimeout;
+      window.addEventListener('scroll', function () {
+        if (scrollTimeout) {
+          clearTimeout(scrollTimeout);
+        }
+        scrollTimeout = setTimeout(handleScroll, 10);
+      });
+
+      // Also handle on initial load
+      handleScroll();
+    });
   </script>
 </body>
 
